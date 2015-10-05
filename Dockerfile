@@ -1,7 +1,7 @@
 FROM jenkins
 
 USER root
-RUN curl -sSL https://get.docker.com/ | sh
+RUN wget -qO- https://get.docker.com/ | sed 's/lxc-docker/lxc-docker-1.7.1/' | sh
 RUN usermod -aG docker jenkins
 
 USER jenkins
